@@ -1,0 +1,22 @@
+{% extends 'nav.html' %}
+{% block nav %}
+<h4 class="bg-primary text-center">My Post</h4>
+{%for i in data%}
+<div class="card mb-5 bg-light" style="width: 100%;">
+     {% if i.image %}
+     <img class="card-img-top" src="{{i.image.url}}" alt="Card image cap">
+     {%endif%}
+            <div class="card-body">
+              <h5 class="card-title">{{i.caption}}</h5>
+              <p class="card-text">{{i.datetime}}</p>
+            </div>
+            </div>
+            <div class="card-footer">
+              <a href="{% url 'ep' i.id %}" class="btn btn-warning">Edit</a>
+              <a href="{% url 'dp' i.id %}" class="btn btn-danger">Delete</a>
+
+            </div>
+
+            {%endfor%}
+
+{% endblock nav %}

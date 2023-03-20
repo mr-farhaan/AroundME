@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <h1>LOGIN</h1>
+    <h1 class="text-center bg-warning">AROUND ME!</h1> 
     {% if messages %}
     {% for i in messages %}
      {% if i.level == DEFAULT_MESSAGE_LEVELS.SUCCESS %}
@@ -32,13 +32,8 @@
      {%endif%} 
      {%endfor%}
      {%endif%}  
-    <form action="" method="post">
-      {% csrf_token %}
-      <table>
-        {{form.as_table}}
-      </table>
-      <button>login</button>
-    </form>
+    <a href="{% url 'reg' %}" class="btn btn-outline-primary">Register</a>    
+    <a href="{% url 'log' %}" class="btn btn-outline-primary">Login</a>   
       
    
   </body>
